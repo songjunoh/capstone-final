@@ -127,10 +127,10 @@ nav {
 /* Landing page */
 #page-home {
   background:
-    radial-gradient(circle at 12% 14%, rgba(126,232,162,0.34) 0, transparent 28%),
-    radial-gradient(circle at 82% 18%, rgba(99,179,237,0.30) 0, transparent 30%),
-    radial-gradient(circle at 62% 86%, rgba(252,129,129,0.20) 0, transparent 34%),
-    linear-gradient(180deg, #f7fbff 0%, #eaf7f2 46%, #f8fbff 100%);
+          radial-gradient(circle at 12% 14%, rgba(126,232,162,0.34) 0, transparent 28%),
+          radial-gradient(circle at 82% 18%, rgba(99,179,237,0.30) 0, transparent 30%),
+          radial-gradient(circle at 62% 86%, rgba(252,129,129,0.20) 0, transparent 34%),
+          linear-gradient(180deg, #f7fbff 0%, #eaf7f2 46%, #f8fbff 100%);
   color: #172033;
 }
 
@@ -238,12 +238,12 @@ nav {
   padding: 23px;
   border-radius: 20px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72)),
-    #ffffff;
+          linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72)),
+          #ffffff;
   border: 1px solid rgba(19, 52, 73, 0.10);
   box-shadow:
-    0 28px 70px rgba(37, 79, 97, 0.18),
-    inset 0 1px 0 rgba(255,255,255,0.8);
+          0 28px 70px rgba(37, 79, 97, 0.18),
+          inset 0 1px 0 rgba(255,255,255,0.8);
 }
 
 .learning-board::before {
@@ -690,8 +690,8 @@ nav {
   display: none;
   margin-top: 14px;
   background:
-    linear-gradient(180deg, rgba(99,179,237,0.08), rgba(126,232,162,0.04)),
-    #fff;
+          linear-gradient(180deg, rgba(99,179,237,0.08), rgba(126,232,162,0.04)),
+          #fff;
   border: 1px solid rgba(23,32,51,0.10);
   border-radius: 12px;
   overflow: hidden;
@@ -882,10 +882,10 @@ nav {
   gap: 24px;
   align-items: end;
   background:
-    linear-gradient(135deg, rgba(99,179,237,0.18), rgba(126,232,162,0.10) 42%, rgba(246,173,85,0.10)),
-    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255,255,255,0.045) 1px, transparent 1px),
-    #0b1120;
+          linear-gradient(135deg, rgba(99,179,237,0.18), rgba(126,232,162,0.10) 42%, rgba(246,173,85,0.10)),
+          linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(255,255,255,0.045) 1px, transparent 1px),
+          #0b1120;
   background-size: auto, 38px 38px, 38px 38px, auto;
   box-shadow: 0 24px 70px rgba(0,0,0,0.28);
 }
@@ -1010,8 +1010,8 @@ nav {
 .study-panel {
   border-radius: 10px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015)),
-    rgba(15,21,37,0.88);
+          linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015)),
+          rgba(15,21,37,0.88);
   border-color: rgba(99,179,237,0.18);
 }
 
@@ -1021,8 +1021,8 @@ nav {
 
 .pdf-prototype {
   background:
-    linear-gradient(180deg, rgba(99,179,237,0.09), rgba(15,21,37,0.88)),
-    rgba(15,21,37,0.88);
+          linear-gradient(180deg, rgba(99,179,237,0.09), rgba(15,21,37,0.88)),
+          rgba(15,21,37,0.88);
 }
 
 .pdf-prototype-title,
@@ -1056,8 +1056,8 @@ nav {
 .pdf-textarea {
   min-height: 260px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.025), transparent),
-    #090e19;
+          linear-gradient(180deg, rgba(255,255,255,0.025), transparent),
+          #090e19;
   border-color: rgba(255,255,255,0.10);
 }
 
@@ -1097,8 +1097,8 @@ nav {
 .note-card {
   padding: 18px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
-    #0d1424;
+          linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+          #0d1424;
 }
 
 .note-card:hover {
@@ -1112,8 +1112,8 @@ nav {
 
 .quiz-generate-area {
   background:
-    linear-gradient(90deg, rgba(246,173,85,0.09), rgba(99,179,237,0.07)),
-    rgba(0,0,0,0.16);
+          linear-gradient(90deg, rgba(246,173,85,0.09), rgba(99,179,237,0.07)),
+          rgba(0,0,0,0.16);
 }
 
 .quiz-card {
@@ -1169,9 +1169,9 @@ nav {
 
 .page:not(#page-home) {
   background:
-    radial-gradient(circle at 10% 0%, rgba(126,232,162,0.20), transparent 28%),
-    radial-gradient(circle at 92% 12%, rgba(99,179,237,0.24), transparent 30%),
-    linear-gradient(180deg, #f8fcff 0%, #eef8f4 52%, #f7fbff 100%);
+          radial-gradient(circle at 10% 0%, rgba(126,232,162,0.20), transparent 28%),
+          radial-gradient(circle at 92% 12%, rgba(99,179,237,0.24), transparent 30%),
+          linear-gradient(180deg, #f8fcff 0%, #eef8f4 52%, #f7fbff 100%);
   color: #172033;
 }
 
@@ -1521,9 +1521,9 @@ nav {
 
 .study-hero-panel {
   background:
-    linear-gradient(120deg, rgba(10,22,32,0.82), rgba(18,35,50,0.78)),
-    radial-gradient(circle at 8% 0%, rgba(126,232,162,0.24), transparent 32%),
-    #102033 !important;
+          linear-gradient(120deg, rgba(10,22,32,0.82), rgba(18,35,50,0.78)),
+          radial-gradient(circle at 8% 0%, rgba(126,232,162,0.24), transparent 32%),
+          #102033 !important;
   border-color: rgba(126,232,162,0.24) !important;
 }
 
@@ -1823,9 +1823,9 @@ nav {
   max-height: min(86vh, 760px);
   overflow: auto;
   background:
-    radial-gradient(circle at 14% 6%, rgba(59,130,246,0.12), transparent 34%),
-    radial-gradient(circle at 88% 16%, rgba(20,184,166,0.12), transparent 30%),
-    #ffffff;
+          radial-gradient(circle at 14% 6%, rgba(59,130,246,0.12), transparent 34%),
+          radial-gradient(circle at 88% 16%, rgba(20,184,166,0.12), transparent 30%),
+          #ffffff;
   border: 1px solid rgba(23,32,51,0.12);
   border-radius: 18px;
   box-shadow: 0 30px 80px rgba(15,23,42,0.28);
@@ -2003,4 +2003,613 @@ nav {
 .quiz-complete-card .btn-primary {
   justify-self: start;
   border-radius: 999px;
+}
+
+/* ==========================================================================
+   ── COMMUNITY BOARD (CodeMinde 구조 + style.css 색감 적용) ──
+   ========================================================================== */
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+.board-tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+.btab {
+  padding: 12px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.btab:hover {
+  color: var(--text-color);
+}
+.btab.active {
+  color: var(--primary-color);
+}
+.btab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.post-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.post-item:hover {
+  border-color: var(--primary-color);
+  transform: translateX(4px);
+  background: var(--hover-bg);
+}
+.post-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  gap: 4px;
+}
+.stat-val {
+  font-family: var(--font-mono, monospace);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.post-main {
+  flex: 1;
+}
+.post-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color);
+}
+.post-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono, monospace);
+  background: rgba(var(--primary-rgb, 99, 179, 237), 0.1);
+  color: var(--primary-color);
+  border: 1px solid rgba(var(--primary-rgb, 99, 179, 237), 0.25);
+  display: inline-block;
+}
+.post-info {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  gap: 12px;
+}
+.file-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(var(--secondary-rgb, 126, 232, 162), 0.1);
+  color: var(--secondary-color, #7ee8a2);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   ── COMMUNITY & CHAT SYSTEM INTEGRATION (CodeMind 테마 완전 동기화) ──
+   ========================================================================== */
+
+/* ── 커뮤니티 구조 ── */
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+.board-tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.btab {
+  padding: 12px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.btab:hover {
+  color: var(--text);
+}
+.btab.active {
+  color: var(--accent);
+}
+.btab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.post-item {
+  background: var(--surface) !important; /* 기본 배경(--bg)보다 밝은 톤으로 확실히 분리 */
+  border: 1px solid var(--border) !important;
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 입체감 부여 */
+}
+.post-item:hover {
+  border-color: var(--accent) !important;
+  transform: translateX(4px);
+  background: var(--surface2) !important; /* 마우스 오버 시 하이라이트 */
+}
+.post-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  gap: 4px;
+}
+.stat-val {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--text2);
+  text-transform: uppercase;
+}
+.post-main {
+  flex: 1;
+}
+.post-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+.post-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  background: rgba(99, 179, 237, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(99, 179, 237, 0.25);
+  display: inline-block;
+}
+.post-info {
+  font-size: 13px;
+  color: var(--text2);
+  display: flex;
+  gap: 12px;
+}
+.file-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(126, 232, 162, 0.1);
+  color: var(--accent2);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── 채널 채팅 레이아웃 ── */
+.chat-page-inner {
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+}
+.chat-layout {
+  display: flex;
+  height: 100%;
+  background: var(--bg2); /* 한 단계 더 어두운 바탕으로 경계 분리 */
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* 채팅 사이드바 */
+.chat-sidebar {
+  width: 260px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.chat-sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.chat-sidebar-section {
+  padding: 20px 10px;
+}
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text2);
+  margin-bottom: 12px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.channel-item {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text2);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.channel-item:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+.channel-item.active {
+  background: rgba(99, 179, 237, 0.15);
+  color: var(--accent);
+  font-weight: 600;
+}
+.channel-item-del {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--accent4);
+  display: none;
+}
+.channel-item:hover .channel-item-del {
+  display: block;
+}
+
+/* 메인 채팅창 */
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--bg3); /* 메시지가 잘 보이도록 대비감 부여 */
+}
+.chat-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface);
+}
+.chat-messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.chat-message-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.chat-message-row.me {
+  flex-direction: row-reverse;
+}
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 14px;
+  border: 1px solid var(--border);
+}
+.chat-message-content {
+  max-width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chat-message-row.me .chat-message-content {
+  align-items: flex-end;
+}
+.chat-sender-info {
+  font-size: 12px;
+  color: var(--text2);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.chat-bubble {
+  background: var(--surface);
+  padding: 12px 16px;
+  border-radius: 4px 16px 16px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-all;
+  border: 1px solid var(--border);
+}
+.chat-message-row.me .chat-bubble {
+  background: var(--accent);
+  color: var(--bg); /* 어두운 글자색으로 가시성 극대화 */
+  border-radius: 16px 4px 16px 16px;
+  border: none;
+}
+
+/* 채팅 입력창 */
+.chat-input-area {
+  padding: 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.chat-input-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+}
+.chat-input-box:focus-within {
+  border-color: var(--accent);
+}
+.chat-attach-btn {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 8px;
+}
+#chat-textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  padding: 8px;
+}
+
+/* 참가자 패널 */
+.chat-participants {
+  width: 240px;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+}
+
+/* ==========================================================================
+   ── BUTTON OVERRIDE (HTML 매핑 기반 전용 스타일 강제화) ──
+   ========================================================================== */
+
+/* 1. 채널 채팅의 [참가하기] 버튼 -> 글쓰기 버튼과 색상 완벽 일치 */
+#chat-list-view .board-header button.btn-outline {
+  background: var(--accent) !important;
+  background-color: var(--accent) !important;
+  color: var(--bg) !important;
+  border: none !important;
+  padding: 10px 24px !important;
+  font-family: var(--font-body), sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px var(--glow) !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* 2. 커뮤니티 내부의 [← 목록으로 돌아가기] 버튼 -> 글쓰기 버튼과 색상 완벽 일치 */
+#board-detail-view > button.btn-outline {
+  background: var(--accent) !important;
+  background-color: var(--accent) !important;
+  color: var(--bg) !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  font-family: var(--font-body), sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 4px 12px var(--glow) !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* 3. 채팅방 내부의 [← 나가기] 버튼 -> 동일 톤 일치 */
+#chat-room-view .chat-sidebar-header button.btn-outline {
+  background: var(--accent) !important;
+  background-color: var(--accent) !important;
+  color: var(--bg) !important;
+  border: none !important;
+  padding: 6px 12px !important;
+  font-family: var(--font-body), sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px var(--glow) !important;
+  transition: all 0.2s ease !important;
+}
+
+/* 호버 이펙트 */
+#chat-list-view .board-header button.btn-outline:hover,
+#board-detail-view > button.btn-outline:hover,
+#chat-room-view .chat-sidebar-header button.btn-outline:hover {
+  opacity: 0.85 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ==========================================================================
+   ── CHAT INPUT & COMMUNITY COMMENT TEXT RECOVERY ──
+   ========================================================================== */
+
+/* 1. 채팅창 메시지 입력 상자(textarea) 너비 최대화 및 레이아웃 교정 */
+.chat-input-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  background: var(--bg2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  padding: 10px 16px !important;
+}
+
+#chat-textarea {
+  flex: 1 !important;          /* 남은 가로 공간을 전부 채우도록 설정 */
+  width: 100% !important;        /* 명시적으로 100% 확장 */
+  background: transparent !important;
+  border: none !important;
+  color: var(--text) !important; /* 글자색을 밝은 색상으로 유지 */
+  font-size: 14px !important;
+  outline: none !important;
+  resize: none !important;
+  padding: 4px 0 !important;
+  margin: 0 !important;
+}
+
+
+/* 2. 커뮤니티 게시글 상세화면의 '댓글' 글씨 색상을 흰색(밝은 톤)으로 변경 */
+.comment-section h3 {
+  color: var(--text, #e8edf7) !important; /* 검은색에서 테마 전용 밝은 폰트 색상으로 강제 강화 */
+}
+
+/* 댓글 개수 숫자 노출 부분도 명확하게 어우러지도록 보정 */
+#comment-count {
+  color: var(--accent, #63b3ed) !important; /* 포인트 컬러인 하늘색으로 유지하여 가시성 확보 */
+  font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   ── CHATROOM BLACK TEXT ACCESSIBILITY RECOVERY (TEXT TO LIGHT-COLOR) ──
+   ========================================================================== */
+
+/* 1. 채팅방 내부 상단 영역 타이틀 (#일반, 대화방 명칭 등) 컬러 복구 */
+#chat-room-view h3#current-room-title {
+  color: var(--text, #e8edf7) !important;
+  font-weight: 700 !important;
+}
+
+#current-channel-name {
+  color: var(--text, #e8edf7) !important;
+  font-weight: 700 !important;
+}
+
+
+/* 2. 채팅 메인 헤더 및 파일 첨부 박스 텍스트 가시성 확보 */
+.chat-header {
+  color: var(--text, #e8edf7) !important;
+}
+
+/* 첨부파일 텍스트 영역 */
+.chat-file-attachment {
+  color: var(--text, #e8edf7) !important;
+  background: rgba(255, 255, 255, 0.07) !important; /* 어두운 배경에서 이질감 없는 알파 레이어 */
+  border: 1px solid var(--border) !important;
+}
+
+
+/* 3. 우측 참가자 목록 사이드바 레이블 텍스트 튜닝 */
+.chat-participants {
+  color: var(--text, #e8edf7) !important;
+}
+
+/* "참가자 목록" 타이틀 글자 */
+.chat-participants div[style*="font-weight:700;"] {
+  color: var(--text, #e8edf7) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* 개별 참가자 아이템 내부의 이름 텍스트 */
+#participant-list .participant-item,
+#participant-list .participant-item * {
+  color: var(--text, #e8edf7) !important;
+}
+
+
+/* 4. 좌측 사이드바 내부 텍스트 패널 보정 */
+.chat-sidebar-header h3 {
+  color: var(--text, #e8edf7) !important;
+}
+
+.chat-sidebar-section .section-title span {
+  color: var(--text2, #8fa3c8) !important; /* 보조 레이블용 은은한 푸른빛 연회색 */
+}
+
+/* 채널 목록의 # 기호나 텍스트 컬러 검은색 방지 */
+.channel-item {
+  color: var(--text2, #8fa3c8) !important;
+}
+
+.channel-item.active {
+  color: var(--accent, #63b3ed) !important; /* 활성화된 채널은 포인트 하늘색 */
 }

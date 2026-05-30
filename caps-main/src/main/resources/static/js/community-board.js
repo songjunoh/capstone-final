@@ -3,7 +3,7 @@ let editingPostId = null;
 
 async function loadPosts() {
 
-  const response = await fetch("http://localhost:8080/api/community/posts");
+  const response = await fetch("http://localhost:8081/api/community/posts");
 
   posts = await response.json();
 
@@ -25,7 +25,10 @@ function openWriteModal() {
   const fileInput = document.getElementById('write-file');
   if (fileInput) fileInput.value = '';
 
-  document.getElementById('writeModal').classList.add('open');
+  const modal = document.getElementById('writeModal');
+  document.body.appendChild(modal);
+  modal.classList.add('open');
+  modal.style.display = 'flex';
 }
 
 const writeModal = document.getElementById('writeModal');
@@ -34,6 +37,7 @@ if (writeModal) {
   writeModal.addEventListener('click', e => {
     if (e.target === writeModal) {
       writeModal.classList.remove('open');
+      writeModal.style.display = 'none';
     }
   });
 }
@@ -66,8 +70,8 @@ async function submitPost() {
     }
 
     const url = isEdit
-      ? `http://localhost:8080/api/community/posts/${editingPostId}?userId=${currentUser.id}`
-      : "http://localhost:8080/api/community/posts";
+      ? `http://localhost:8081/api/community/posts/${editingPostId}?userId=${currentUser.id}`
+      : "http://localhost:8081/api/community/posts";
 
     const method = isEdit ? "PUT" : "POST";
 
@@ -94,7 +98,9 @@ async function submitPost() {
       renderBoard();
     }
 
-    document.getElementById('writeModal').classList.remove('open');
+    const modal = document.getElementById('writeModal');
+    modal.classList.remove('open');
+    modal.style.display = 'none';
 
   } catch (error) {
     console.error(error);
@@ -121,8 +127,9 @@ function editPost(postId) {
   document.getElementById('write-category').value =
     post.category || 'exam';
 
-  document.getElementById('writeModal')
-    .classList.add('open');
+  const modal = document.getElementById('writeModal');
+  modal.classList.add('open');
+  modal.style.display = 'flex';
 }
 
 async function deletePost(postId) {
@@ -133,7 +140,7 @@ async function deletePost(postId) {
   try {
 
     const response = await fetch(
-      `http://localhost:8080/api/community/posts/${postId}?userId=${currentUser.id}`,
+      `http://localhost:8081/api/community/posts/${postId}?userId=${currentUser.id}`,
       {
         method: "DELETE"
       }
@@ -257,7 +264,7 @@ async function viewPostDetail(id) {
   }
 
   try {
-    await fetch(`http://localhost:8080/api/community/posts/${id}/view`, {
+    await fetch(`http://localhost:8081/api/community/posts/${id}/view`, {
       method: "POST"
     });
     post.views = (post.views || 0) + 1;
@@ -425,7 +432,7 @@ async function submitComment(postId) {
   }
 
   try {
-    const response = await fetch("http://localhost:8080/api/community/comments", {
+    const response = await fetch("http://localhost:8081/api/community/comments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -536,7 +543,7 @@ async function saveComment(
   try {
 
     const response = await fetch(
-      `http://localhost:8080/api/community/comments/${commentId}?userId=${currentUser.id}`,
+      `http://localhost:8081/api/community/comments/${commentId}?userId=${currentUser.id}`,
       {
         method: "PUT",
         headers: {
@@ -605,7 +612,7 @@ async function deleteComment(postId, commentId) {
   try {
 
     const response = await fetch(
-      `http://localhost:8080/api/community/comments/${commentId}?userId=${currentUser.id}`,
+      `http://localhost:8081/api/community/comments/${commentId}?userId=${currentUser.id}`,
       {
         method: "DELETE"
       }
@@ -640,7 +647,7 @@ function hideDetail() {
 }
 
 function downloadRealFile(postId, fileName) {
-  const downloadUrl = `http://localhost:8080/api/community/posts/${postId}/download`;
+  const downloadUrl = `http://localhost:8081/api/community/posts/${postId}/download`;
   
   const a = document.createElement('a');
   a.href = downloadUrl;
@@ -663,7 +670,7 @@ async function likePost(postId) {
   try {
 
     const response = await fetch(
-      `http://localhost:8080/api/community/posts/${postId}/like?userId=${currentUser.id}`,
+      `http://localhost:8081/api/community/posts/${postId}/like?userId=${currentUser.id}`,
       {
         method: "POST"
       }
@@ -747,7 +754,7 @@ async function reportPost(postId) {
   try {
 
     const response = await fetch(
-      `http://localhost:8080/api/community/posts/${postId}/report?userId=${currentUser.id}&reason=${reason}`,
+      `http://localhost:8081/api/community/posts/${postId}/report?userId=${currentUser.id}&reason=${reason}`,
       {
         method: "POST"
       }

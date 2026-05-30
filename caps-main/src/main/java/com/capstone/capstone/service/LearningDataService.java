@@ -49,18 +49,22 @@ public class LearningDataService {
                 .orElseThrow(() -> new IllegalArgumentException("요약 정보를 찾을 수 없습니다."));
     }
 
-    public ReverseLearningLog saveReverseLearningLog(Long summaryId, String reverseQuestion, String userAnswer, String aiFeedback) {
+    public ReverseLearningLog saveReverseLearningLog(String userId, Long summaryId, String reverseQuestion, String userAnswer, String aiFeedback) {
         ReverseLearningLog log = new ReverseLearningLog();
-        log.setSummaryId(summaryId);
+        log.setSummaryId(summaryId == null ? 0L : summaryId);
         log.setReverseQuestion(reverseQuestion);
         log.setUserAnswer(userAnswer);
         log.setAiFeedback(aiFeedback);
-        log.setUserId("guest");
+        log.setUserId(normalizeUserId(userId));
         return reverseLearningLogRepository.save(log);
     }
 
     public List<ReverseLearningLog> getReverseLogs(Long summaryId) {
         return reverseLearningLogRepository.findBySummaryId(summaryId);
+    }
+
+    public List<ReverseLearningLog> getReverseLearningLogs(String userId) {
+        return reverseLearningLogRepository.findByUserIdOrderByCreatedAtDesc(normalizeUserId(userId));
     }
 
     public StudyMemo saveMemo(String userId, Long summaryId, String memoContent) {

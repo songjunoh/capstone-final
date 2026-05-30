@@ -72,6 +72,11 @@ function renderMyPageMockData(tabId) {
       </div>
     `;
   }
+
+  else if (tabId === 'feedback') {
+    loadMyFeedbackLogs();
+  }
+
   else if (tabId === 'posts') {
 
     const postList =
@@ -224,6 +229,91 @@ function renderMyPageMockData(tabId) {
           </div>
         `;
   }
+}
+
+async function loadMyFeedbackLogs() {
+  const feedbackList = document.getElementById('mypage-feedback-list');
+  if (!feedbackList) return;
+
+  const user = JSON.parse(localStorage.getItem("currentUser") || "null");
+
+  if (!user || !user.id) {
+    feedbackList.innerHTML = `
+      <div style="text-align:center; padding:40px; color:var(--text3);">
+         로그인 후 AI 피드백 기록을 확인할 수 있습니다.
+         </div>
+      `;
+    return;
+  }
+
+  try {
+    const response = await fetch("api/pdf/reverse-log", {
+      headers: {
+        "X-User-Id": String(user.id)
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(await response.text());
+    }
+
+    const logs = await response.json();
+
+    if (!Array.isArray(logs) || logs.length === 0) {
+      feedbackList.innerHTML = `
+        <div style="text-align:center; padding:40px; color:var(--text3);">
+           저장된 AI 피드백 기록이 없습니다.
+        </div>
+     `;
+      return;
+    }
+
+    feedbackList.innerHTML = logs.map(log => `
+       <div class="note-card" style="--ncolor: var(--accent5);">
+           <div class="note-meta">
+             <span class="note-subject" style="background:rgba(183,148,244,0.12); color:var(--accent5);">
+               AI 피드백
+             </span>
+             <span class="note-date">${formatMyPageDate(log.createdAt)}</span>
+           </div>
+           
+           <div class="note-title">AI 설명 평가 기록</div>
+           
+           <div class="note-q" style="background:var(--bg); border:1px solid var(--border);">
+             <strong>질문</strong><br>
+             ${escapeMyPageHtml(log.reverseQuestion || '')}
+            </div>
+            
+            <div class="not-correct">
+             AI 피드백:<br>
+             ${escapeMyPageHtml(log.aiFeedback || '').replace(/\n/g, '<br>')}
+            </div>
+           </div>
+           `).join('');
+  } catch (error) {
+    console.error(error);
+    feedbackList.innerHTML = `
+    <div style="text-align:center; padding:40px; color:var(--accent4);">
+     AI 피드백 기록을 불러오지 못했습니다.
+    </div>
+   `;
+  }
+}
+
+function formatMyPageDate(value) {
+  if (!value) return '-';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '-';
+  return date.toLocaleDateString();
+}
+
+function escapeMyPageHtml(value) {
+  return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
 }
 
 document.addEventListener('DOMContentLoaded', () => {

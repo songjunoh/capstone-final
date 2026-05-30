@@ -18,19 +18,14 @@ let pdfState = {
 
 function requireLoginForSave() {
 
-  const userId =
-      typeof window.getCurrentUserId === 'function'
-        ? window.getCurrentUserId() : '';
+  const user = JSON.parse(localStorage.getItem("currentUser") || "null");
 
-  if (!userId || userId === 'guest') {
+  if (!user || !user.id) {
     showToast("로그인 후 저장할 수 있습니다.", "WARN");
-    if (typeof openLogin === 'function') {
-      openLogin();
-    }
-
+    if (typeof openLogin === 'function') openLogin();
     return null;
   }
-  return userId;
+  return String(user.id);
 }
 
 
@@ -545,7 +540,7 @@ async function loadStudyMemos() {
   try {
     const response = await fetch(pdfApi.memoList(pdfState.summaryId || 0), {
       headers: {
-        'X-User-Id': typeof window.getCurrentUserId === 'function' ? window.getCurrentUserId() : 'guest'
+        'X-User-Id': requireLoginForSave()
       }
     });
     if (!response.ok) throw new Error(await response.text());
@@ -791,5 +786,11 @@ async function saveFeedbackLog() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadStudyMemos();
+  const user = JSON.parse(localStorage.getItem("currentUser") || "null");
+
+  if (user && user.id) {
+    loadStudyMemos();
+  } else {
+    renderStudyMemos([]);
+  }
 });

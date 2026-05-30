@@ -1,4 +1,4 @@
-const AUTH_API_URL = "http://localhost:8080/api/auth";
+const AUTH_API_URL = "http://localhost:8081/api/auth";
 
 let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
 
@@ -6,11 +6,22 @@ function updateAuthUI() {
   const navRight = document.querySelector(".nav-right");
 
   if (!currentUser) {
-    navRight.innerHTML = `<button class="btn-login" onclick="openLogin()">로그인</button>`;
+    navRight.innerHTML = `<button class="btn-outline" onclick="toggleDarkMode()" id="darkModeBtn">🌙 다크모드</button><button class="btn-login" onclick="openLogin()">로그인</button>`;
     return;
   }
 
   navRight.innerHTML = `
+    <button
+    class="btn-outline"
+    onclick="toggleDarkMode()"
+    id="darkModeBtn"
+    style="
+       padding:8px 14px;
+       font-size:13px;
+       margin-right:8px;
+       "
+       >🌙 다크모드
+       </button>
     <button
     class="btn-outline"
     style="
@@ -154,6 +165,20 @@ function logout() {
   currentUser = null;
   localStorage.removeItem("currentUser");
 
+  // 로그아웃 시 PDF/메모/문제/피드백 기록 삭제
+  Object.keys(localStorage).forEach(key => {
+    if (
+        key.startsWith("codemind_notes_") ||
+        key.startsWith("codemind_recent_quiz_questions_") ||
+        key.startsWith("codemind_pdf_") ||
+        key.startsWith("codemind_summary_") ||
+        key.startsWith("codemind_feedback_") ||
+        key.startsWith("codemind_wrong_")
+    ) {
+      localStorage.removeItem(key);
+    }
+  });
+
   chatRooms = [];
   currentRoomId = null;
   currentChannelId = null;
@@ -164,8 +189,33 @@ function logout() {
   document.getElementById('chat-room-view').style.display = 'none';
   document.getElementById('chat-list-view').style.display = 'block';
 
+  //오답노트 화면 즉시 초기화
+  if (typeof window.getAppNotes === "function") {
+    window.getAppNotes().length = 0;
+  }
+
+  const notesGrid = document.getElementById("notesGrid");
+  if (notesGrid) {
+    notesGrid.innerHTML = `
+    <div class="empty-state">
+       <div class="empty-icon">NOTE</div>
+       <h3>아직 저장된 오답이 없습니다</h3>
+       <p>로그인 후 AI 예상문제를 풀면 오답노트가 저장됩니다.</p>
+    </div>
+  `;
+  }
+
   updateAuthUI();
   loadChatRooms();
 
   showToast("로그아웃되었습니다.", "👋");
 }
+
+window.getCurrentUser = function () {
+  return JSON.parse(localStorage.getItem("currentUser") || "null");
+};
+
+window.getCurrentUserId = function () {
+  const user = JSON.parse(localStorage.getItem("currentUser") || "null");
+  return user && user.id ? String(user.id) : "";
+};

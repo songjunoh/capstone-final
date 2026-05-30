@@ -21,6 +21,15 @@ window.saveAppNotes = function() {
 };
 
 async function loadNotesFromApi() {
+
+  const loginUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+
+  if (!loginUser) {
+    notes.length = 0;
+    renderNotes("all");
+    return;
+  }
+
   try {
     const response = await fetch(notesApi.list, {
       headers: buildUserHeaders()
@@ -57,6 +66,14 @@ function loadNotesFromLocalStorage() {
 }
 
 async function createNoteViaApi(note) {
+
+  const loginUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+
+  if (!loginUser) {
+    showToast("로그인 후 오답노트를 저장할 수 있습니다.", "⚠️");
+    return null;
+  }
+
   const normalized = normalizeNote(note);
   const createPayload = { ...normalized, id: null };
 

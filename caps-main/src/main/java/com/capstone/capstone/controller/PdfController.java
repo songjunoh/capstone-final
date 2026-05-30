@@ -181,6 +181,7 @@ public class PdfController {
         }
 
         ReverseLearningLog log = learningDataService.saveReverseLearningLog(
+                userId,
                 parseOptionalLong(request.get("summaryId")),
                 request.get("reverseQuestion"),
                 request.get("userAnswer"),
@@ -188,6 +189,17 @@ public class PdfController {
         );
 
         return ResponseEntity.ok(log);
+    }
+
+    @GetMapping("/reverse-log")
+    public ResponseEntity<List<ReverseLearningLog>> getReverseLogs(
+            @RequestHeader(value = "X-User-Id", required = false) String userId
+    ) {
+        if (isGuestUser(userId)) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        return ResponseEntity.ok(learningDataService.getReverseLearningLogs(userId));
     }
 
     @PostMapping("/memo")

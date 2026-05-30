@@ -1,4 +1,4 @@
-const pages = ['home', 'ai', 'code', 'board'];
+const pages = ['home', 'ai', 'code', 'board', 'chat', 'mypage'];
 
 function showPage(name) {
   pages.forEach(page => {
@@ -15,6 +15,16 @@ function showPage(name) {
   }
   if (name === 'board' && typeof renderBoard === 'function') {
     renderBoard();
+  }
+
+  if (name === 'chat' && typeof renderChatRooms === 'function') {
+    renderChatRooms();
+  }
+
+  if (name === 'mypage' && typeof switchMyPageTab === 'function') {
+    setTimeout(() => {
+      switchMyPageTab('pdf', document.querySelector('#mypage-tabs .btab'));
+    }, 50);
   }
 
   window.scrollTo(0, 0);
@@ -55,7 +65,7 @@ function safeRemoveItem(key) {
     delete memoryStorage[key];
   }
 }
-
+/*
 function getCurrentUserId() {
   return safeGetItem('codemind_user_id') || 'guest';
 }
@@ -114,9 +124,8 @@ function updateLoginButton() {
 }
 
 window.getCurrentUserId = getCurrentUserId;
-
+*/
 document.addEventListener('DOMContentLoaded', () => {
-  updateLoginButton();
 
   const loginModal = document.getElementById('loginModal');
   if (loginModal) {
@@ -127,3 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+function applyDarkMode() {
+  const isDark = localStorage.getItem("darkMode") === "true";
+  document.body.classList.toggle("dark-mode", isDark);
+
+  const btn = document.getElementById("darkModeBtn");
+  if (btn) {
+    btn.textContent = isDark ? "☀️ 라이트모드" : "🌙 다크모드";
+  }
+}
+
+function toggleDarkMode() {
+  const isDark = localStorage.getItem("darkMode") === "true";
+  localStorage.setItem("darkMode", String(!isDark));
+  applyDarkMode();
+}
+
+document.addEventListener("DOMContentLoaded", applyDarkMode);

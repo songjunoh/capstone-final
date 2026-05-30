@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8080/api/chat";
+const API_BASE_URL = "http://localhost:8081/api/chat";
 
 let chatRooms = [];
 let currentRoomId = null;
@@ -108,19 +108,32 @@ async function loadChatRooms() {
 
 function openJoinModal() {
   document.getElementById('join-code-input').value = '';
-  document.getElementById('joinRoomModal').classList.add('open');
+
+  const modal = document.getElementById('joinRoomModal');
+  document.body.appendChild(modal);
+  modal.classList.add('open');
+  modal.style.display = 'flex';
 }
 
 function openCreateModal() {
   document.getElementById('create-room-name').value = '';
-  document.getElementById('createRoomModal').classList.add('open');
+
+  const modal = document.getElementById('createRoomModal');
+  document.body.appendChild(modal);
+  modal.classList.add('open');
+  modal.style.display = 'flex';
 }
 
 document.getElementById('joinRoomModal').addEventListener('click', e => {
-  if (e.target === document.getElementById('joinRoomModal')) e.target.classList.remove('open');
+  if (e.target === document.getElementById('joinRoomModal')) {e.target.classList.remove('open');
+  e.target.style.display = 'none';
+}
 });
 document.getElementById('createRoomModal').addEventListener('click', e => {
-  if (e.target === document.getElementById('createRoomModal')) e.target.classList.remove('open');
+  if (e.target === document.getElementById('createRoomModal')) {
+    e.target.classList.remove('open');
+    e.target.style.display = 'none';
+  }
 });
 
 async function joinChatRoom() {
@@ -160,7 +173,9 @@ async function joinChatRoom() {
       chatRooms.push(normalizedRoom);
     }
 
-    document.getElementById('joinRoomModal').classList.remove('open');
+    const joinModal = document.getElementById('joinRoomModal');
+    joinModal.classList.remove('open');
+    joinModal.style.display = 'none';
     document.getElementById('join-code-input').value = '';
 
     showToast("채팅방에 참가했습니다!", "✅");
@@ -207,7 +222,9 @@ async function createChatRoom() {
 
     chatRooms.push(normalizedNewRoom);
 
-    document.getElementById('createRoomModal').classList.remove('open');
+    const createModal = document.getElementById('createRoomModal');
+    createModal.classList.remove('open');
+    createModal.style.display = 'none';
     document.getElementById('create-room-name').value = '';
 
     showToast(`방이 생성되었습니다! 초대코드: ${normalizedNewRoom.inviteCode}`, "✨");

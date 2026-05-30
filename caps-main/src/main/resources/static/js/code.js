@@ -65,7 +65,7 @@ async function runCodeWithJudge0() {
 
   try {
     // 🚀 [트랙 1] Judge0 API 호출 (일반 컴파일 및 터미널 출력용)
-    const judge0Promise = fetch('http://localhost:8080/api/compile', {
+    const judge0Promise = fetch('http://localhost:8081/api/compile', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ async function runCodeWithJudge0() {
     }).then(res => res.json());
 
     // 🚀 [트랙 2] 자바 백엔드 디버거 호출 (시각화 UI용)
-    const tracerPromise = fetch('http://localhost:8080/api/trace', {
+    const tracerPromise = fetch('http://localhost:8081/api/trace', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
